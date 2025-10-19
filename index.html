@@ -4,16 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peñón, Papel o Tijeras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fafafa;
+      margin-top: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .opciones {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .opcion {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .opcion:hover {
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+
+    #jugadas, #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    #resultado {
+      color: #0078D4;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0078D4;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005FA3;
+    }
+  </style>
 </head>
 <body>
   <h1>Juego: Peñón, Papel o Tijeras</h1>
-  <p>Selecciona tu jugada:</p>
+  <p>Haz tu elección:</p>
 
-  <button onclick="jugar('peñon')">🪨 Peñón</button>
-  <button onclick="jugar('papel')">📄 Papel</button>
-  <button onclick="jugar('tijeras')">✂️ Tijeras</button>
+  <div class="opciones">
+    <div class="opcion" onclick="jugar('peñon')">
+      <img src="img/peñon.png" alt="Peñón">
+      <p>Peñón</p>
+    </div>
+    <div class="opcion" onclick="jugar('papel')">
+      <img src="img/papel.png" alt="Papel">
+      <p>Papel</p>
+    </div>
+    <div class="opcion" onclick="jugar('tijeras')">
+      <img src="img/tijeras.png" alt="Tijeras">
+      <p>Tijeras</p>
+    </div>
+  </div>
 
+  <p id="jugadas"></p>
   <h2 id="resultado"></h2>
+
+  <button onclick="reiniciar()">🔄 Reiniciar</button>
 
   <script src="script.js"></script>
 </body>
